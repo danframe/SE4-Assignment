@@ -4,6 +4,16 @@ import java.util.HashMap;
 
 public class CommandParser {
 
+    CommandManager manager;
 
+    public CommandParser(CommandManager manager) {
+        this.manager = manager;
+    }
+
+    public boolean parse(String command) {
+
+        return false;
+
+    }
 
 }

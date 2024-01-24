@@ -1,23 +1,35 @@
 package uk.ac.leedsbeckett.c7293754.se4.variables;
 
-import uk.ac.leedsbeckett.c7293754.se4.variables.VariableType;
+import uk.ac.leedsbeckett.c7293754.se4.commands.Command;
+import uk.ac.leedsbeckett.c7293754.se4.exceptions.GPLException;
 
 public class Variable {
 
     private String name;
-    private VariableType type;
+    protected Object value;
 
-    public Variable(String name, VariableType type) {
+    public Variable(String name) {
         this.name = name;
-        this.type = type;
     }
 
     public String getName() {
         return name;
     }
 
-    public VariableType getType() {
-        return type;
+    public void set(Object value) throws GPLException {
+
+    }
+
+    public Object get() {
+        return this.value;
+    }
+
+    public String getStr() {
+        return isNull() ? "null" : get().toString();
+    }
+
+    public boolean isNull() {
+        return this.value == null;
     }
 
 }
